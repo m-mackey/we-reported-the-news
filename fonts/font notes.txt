@@ -1,0 +1,6 @@
+
+can get web links to these fonts so dont have to download/upload them from the following links
+
+main/header playfair display: https://fonts.google.com/specimen/Playfair+Display?query=playfair 
+
+secondary font eb garamond: https://fonts.google.com/specimen/EB+Garamond
