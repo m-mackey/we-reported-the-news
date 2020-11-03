@@ -1,0 +1,12 @@
+/* point color #1fd9b7
+bg color F7F0F5
+text black or something like 6C6F7F
+links in blue */
+
+body {
+    background-color: #F7F0F5;
+}
+
+#instantReport{
+    background-color: #1Fd9b7;;
+}
