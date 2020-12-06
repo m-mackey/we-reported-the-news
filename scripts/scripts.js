@@ -1,8 +1,10 @@
-
+// maybe i should rename things as its a little confusing
 
 //switch active contents based on button clicked
 function instantReport () {
     activecontent.innerHTML ='<button id="instantReportBtn">report!</button>';
+    // play audio when instant button is clicked
+    instantReportBtn.addEventListener('click', playAudio);
 };
 
 instantModeSwitchBtn.addEventListener('click', instantReport);
