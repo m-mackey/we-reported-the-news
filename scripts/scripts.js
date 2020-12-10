@@ -1,28 +1,36 @@
 // maybe i should rename things as its a little confusing
+let activeContent = document.getElementById('activecontent');
+
+let instantModeSwitch = document.getElementById('instantModeSwitch');
+instantModeSwitch.addEventListener('click', instantReport);
 
 //switch active contents based on button clicked
 function instantReport () {
-    activecontent.innerHTML ='<button id="instantReportBtn">report!</button>';
+    activeContent.innerHTML ='<button id="instantReportBtn">report!</button>';
     // play audio when instant button is clicked
+    let instantReportBtn = document.getElementById('instantReportBtn');
     instantReportBtn.addEventListener('click', playAudio);
+    
 };
 
-instantModeSwitchBtn.addEventListener('click', instantReport);
+
 
 function timedReport () {
-    activecontent.innerHTML = '<form><input type="number"><button>start</button></form>';
+    activeContent.innerHTML = '<form><input type="number"><button>start</button></form>';
 };
 
-timedModeSwitchBtn.addEventListener('click', timedReport);
+let timedModeSwitch = document.getElementById('timedModeSwitch');
+timedModeSwitch.addEventListener('click', timedReport);
 
 // plays audio for both modes
 function playAudio(){
     let audio = new Audio('audio/wereportedthenews.mp3');
     audio.play();
     console.log('test');
-}
+};
 
 // play audio when instant button is clicked
+let instantReportBtn = document.getElementById('instantReportBtn');
 instantReportBtn.addEventListener('click', playAudio);
 
 // play audio at end of timer
