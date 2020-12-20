@@ -15,7 +15,18 @@ function instantReport () {
 };
 
 function timedReport () {
-    activeContent.innerHTML = '<form><input type="number"><button>start</button></form>';
+    activeContent.innerHTML = '<form id="timer-input"><input type="number" id="minutes"><input type="number" id="seconds"><button>start</button></form>';
+    const timerInput = document.getElementById('timer-input');
+    
+    timerInput.addEventListener('submit', function(e){
+    e.preventDefault();
+    const mins = this.minutes.value;
+    const secs = this.seconds.value;
+    console.log(mins);
+    console.log(secs);
+    timer(parseInt((mins * 60)) + parseInt(secs));
+    this.reset();
+    });
 };
 
 let timedModeSwitch = document.getElementById('timed-mode-switch');
@@ -25,32 +36,33 @@ timedModeSwitch.addEventListener('click', timedReport);
 function playAudio(){
     let audio = new Audio('audio/wereportedthenews.mp3');
     audio.play();
-    console.log('test');
 };
 
 // play audio when instant button is clicked
 let instantReportBtn = document.getElementById('instant-report-btn');
 instantReportBtn.addEventListener('click', playAudio);
 
-// play audio at end of timer
-
 
 // timer stuff
 let countdown; //wes said something about how if you dont want this in the glboal name space aroudn the 5 min mark but i didnt catch it
 const countdownDisplay = document.getElementById('countdown-display');
 
+
 function timer(seconds){
+    // clear active timer
+    clearInterval(countdown);
     //gets current date
     const now = Date.now();
     //you have to times by 1000 because of how the seconds are by default. is the seconds here special or is it just what is passed because it isn't defined?
     const then = now + seconds * 1000;
     displayTimeLeft(seconds); //runs fn once immediately
-
+    console.log(seconds);
     //so this has an unnamed? arrow function in it. the first part b4 comma is the function that we are running, the second is how often it is run
     countdown = setInterval(() => {
         const secondsLeft = Math.round((then - Date.now()) / 1000);
         // check if timer should stop
         if(secondsLeft < 0){
+          playAudio();  
           clearInterval(countdown); //clearInterval is a method related to setInterval
           return;
         }
@@ -65,6 +77,3 @@ function displayTimeLeft(seconds) {
     const display = `${minutes < 10 ? '0' : '' }${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     countdownDisplay.textContent = display;
 }
-
-// around 17 min
-
