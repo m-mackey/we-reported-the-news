@@ -1,9 +1,64 @@
-/* point color #1fd9b7
-bg color F7F0F5
-text black or something like 6C6F7F
-links in blue */
+/* Layout */
 
+#wrapper {
+    display: grid;
+    grid-template-areas: 
+        "h1 h1"
+        "countdown countdown"
+        "active-content active-content"
+        "timed-switch instant-switch";
+}
 
+h1{
+    grid-area: h1;
+    justify-self: center;
+    font-size: 1.70em;
+}
+
+#countdown-display{
+    grid-area: countdown;
+    justify-self: center;
+    font-size: 1.70em;
+}
+
+#active-content{
+    grid-area: active-content;
+    display: grid;
+    justify-items: center;
+}
+
+form {
+    display: grid;
+    grid-template-areas: 
+      "mins secs"
+      "start-btn reset-btn";
+}
+
+#minutes{
+    grid-area: mins;
+}
+
+#seconds{
+    grid-area: secs;
+}
+
+#start-btn{
+    grid-area: start-btn;
+}
+
+#stop-btn{
+    grid-area: reset-btn;
+}
+
+#timed-mode-switch{
+    grid-area: timed-switch;
+    justify-self: center;
+}
+
+#instant-mode-switch{
+    grid-area: instant-switch;
+    justify-self: center;
+}
 
 
 

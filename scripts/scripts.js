@@ -15,10 +15,11 @@ function instantReport () {
 };
 
 function timedReport () {
-    activeContent.innerHTML = '<form id="timer-input"><input type="number" id="minutes" min="0" max="60"><input type="number" id="seconds" min="0" max="60"><input type="submit" value="Start"><input type="button" value="Reset" id="stop-btn"></form>';
+    activeContent.innerHTML = '<form id="timer-input"><input type="number" id="minutes" min="0" max="60"><input type="number" id="seconds" min="0" max="60"><input type="submit" value="Start" id="start-btn"><input type="button" value="Reset" id="stop-btn"></form>';
     const timerInput = document.getElementById('timer-input');
     const resetBtn = document.getElementById('stop-btn');
     resetBtn.addEventListener('click', resetTime);
+    countdownDisplay.textContent = '00:00';
     
     
     timerInput.addEventListener('submit', function(e){
