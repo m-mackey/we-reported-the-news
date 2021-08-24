@@ -5,7 +5,7 @@
     grid-template-areas: 
         "h1 h1"
         "countdown countdown"
-        "active-content active-content"
+        "instant-content timed-content"
         "timed-switch instant-switch";
 }
 
@@ -21,8 +21,14 @@ h1{
     font-size: 1.70em;
 }
 
-#active-content{
-    grid-area: active-content;
+#instant-content{
+    grid-area: instant-content;
+    display: grid;
+    justify-items: center;
+}
+
+#timed-content{
+    grid-area: timed-content;
     display: grid;
     justify-items: center;
 }

@@ -16,12 +16,21 @@
 
         <div id="countdown-display"></div>
 
-        <section id="active-content">
+        <section id="instant-content">
         <button id="instant-report-btn">report!</button>
         </section>
 
-        <button id="timed-mode-switch">timed</button>
-        <button id="instant-mode-switch">instant</button>
+        <section id="timed-content">
+            <form id="timer-input">
+                <input type="number" id="minutes" min="0" max="60" value="00">
+                <input type="number" id="seconds" min="0" max="60" value="00">
+                <input type="submit" value="Start" id="start-btn">
+                <input type="button" value="Reset" id="stop-btn">
+            </form>
+        </section>
+
+        <!-- <button id="timed-mode-switch">timed</button>
+        <button id="instant-mode-switch">instant</button> -->
         
      </div>   
     

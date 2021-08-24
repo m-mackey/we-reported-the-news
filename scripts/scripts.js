@@ -1,21 +1,21 @@
 // maybe i should rename things as its a little confusing
-let activeContent = document.getElementById('active-content');
+// let activeContent = document.getElementById('active-content');
 
-let instantModeSwitch = document.getElementById('instant-mode-switch');
-instantModeSwitch.addEventListener('click', instantReport);
+// let instantModeSwitch = document.getElementById('instant-mode-switch');
+// instantModeSwitch.addEventListener('click', instantReport);
 
 //switch active contents based on button clicked
-function instantReport () {
-    activeContent.innerHTML ='<button id="instant-report-btn">report!</button>';
-    // play audio when instant button is clicked
-    let instantReportBtn = document.getElementById('instant-report-btn');
-    instantReportBtn.addEventListener('click', playAudio);
-    clearInterval(countdown);
-    countdownDisplay.innerHTML= "";
-};
+// function instantReport () {
+//     // activeContent.innerHTML ='<button id="instant-report-btn">report!</button>';
+//     // play audio when instant button is clicked
+//     let instantReportBtn = document.getElementById('instant-report-btn');
+//     instantReportBtn.addEventListener('click', playAudio);
+//     clearInterval(countdown);
+//     countdownDisplay.innerHTML= "";
+// };
 
 function timedReport () {
-    activeContent.innerHTML = '<form id="timer-input"><input type="number" id="minutes" min="0" max="60"><input type="number" id="seconds" min="0" max="60"><input type="submit" value="Start" id="start-btn"><input type="button" value="Reset" id="stop-btn"></form>';
+    // activeContent.innerHTML = '<form id="timer-input"><input type="number" id="minutes" min="0" max="60"><input type="number" id="seconds" min="0" max="60"><input type="submit" value="Start" id="start-btn"><input type="button" value="Reset" id="stop-btn"></form>';
     const timerInput = document.getElementById('timer-input');
     const resetBtn = document.getElementById('stop-btn');
     resetBtn.addEventListener('click', resetTime);
@@ -40,7 +40,7 @@ function timedReport () {
 
 
 
-let timedModeSwitch = document.getElementById('timed-mode-switch');
+let timedModeSwitch = document.getElementById('start-btn');
 timedModeSwitch.addEventListener('click', timedReport);
 
 // plays audio for both modes
