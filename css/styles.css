@@ -75,6 +75,15 @@ form {
     grid-area: reset-btn;
 }
 
+/* Styles */
 
+/* serif fonts! */
+/* center countdown, can you style input arrows, looks like there needs to be padding between input and buttons */
+button, #start-btn, #stop-btn {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    /* add rules for pushed animation */
+}
 
 
