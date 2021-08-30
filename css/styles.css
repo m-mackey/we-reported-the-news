@@ -1,18 +1,49 @@
 /* Layout */
 
-#wrapper {
+/* desktop */
+/* #wrapper {
     display: grid;
     grid-template-areas: 
         "h1 h1"
-        "countdown countdown"
-        "instant-content timed-content"
-        "timed-switch instant-switch";
+        "instant-content countdown"
+        "instant-content timed-content";
+} */
+
+#wrapper {
+    display: grid;
+    grid-template-areas: 
+        "h1"
+        "instant-content"
+        "timed-content"
+        "timed-content";
+    height: 100vh;
+    width: 100vw; 
 }
 
 h1{
     grid-area: h1;
     justify-self: center;
     font-size: 1.70em;
+    height: 10vh;
+}
+
+
+#instant-content{
+    grid-area: instant-content;
+    display: grid;
+    justify-items: center;
+    height: 40vh;
+}
+
+#timed-content{
+    grid-area: timed-content;
+    display: grid;
+    grid-template-areas: 
+    "countdown countdown"
+    "form form"
+    "form form";
+    justify-items: center;
+    height: 40vh;
 }
 
 #countdown-display{
@@ -20,20 +51,8 @@ h1{
     justify-self: center;
     font-size: 1.70em;
 }
-
-#instant-content{
-    grid-area: instant-content;
-    display: grid;
-    justify-items: center;
-}
-
-#timed-content{
-    grid-area: timed-content;
-    display: grid;
-    justify-items: center;
-}
-
 form {
+    grid-area: form;
     display: grid;
     grid-template-areas: 
       "mins secs"
@@ -55,17 +74,6 @@ form {
 #stop-btn{
     grid-area: reset-btn;
 }
-
-#timed-mode-switch{
-    grid-area: timed-switch;
-    justify-self: center;
-}
-
-#instant-mode-switch{
-    grid-area: instant-switch;
-    justify-self: center;
-}
-
 
 
 
