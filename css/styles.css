@@ -39,6 +39,7 @@ h1{
     grid-area: timed-content;
     display: grid;
     grid-template-areas: 
+    "timed-title timed-title"
     "countdown countdown"
     "form form"
     "form form";
@@ -51,6 +52,11 @@ h1{
     justify-self: center;
     font-size: 1.70em;
 }
+
+#timed-title{
+    grid-area: timed-title;
+}
+
 form {
     grid-area: form;
     display: grid;

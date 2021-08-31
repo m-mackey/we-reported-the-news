@@ -14,34 +14,7 @@
 //     countdownDisplay.innerHTML= "";
 // };
 
-function timedReport () {
-    // activeContent.innerHTML = '<form id="timer-input"><input type="number" id="minutes" min="0" max="60"><input type="number" id="seconds" min="0" max="60"><input type="submit" value="Start" id="start-btn"><input type="button" value="Reset" id="stop-btn"></form>';
-    const timerInput = document.getElementById('timer-input');
-    const resetBtn = document.getElementById('stop-btn');
-    resetBtn.addEventListener('click', resetTime);
-    countdownDisplay.textContent = '00:00';
-    
-    
-    timerInput.addEventListener('submit', function(e){
-    e.preventDefault();
-    const mins = this.minutes.value;
-    const secs = this.seconds.value;
-    console.log(mins);
-    console.log(secs);
-    timer(parseInt((mins * 60)) + parseInt(secs));
-    this.reset();
-    });
-    
-    function resetTime(){
-        clearInterval(countdown);
-        countdownDisplay.textContent = '00:00';
-    }
-};
 
-
-
-let timedModeSwitch = document.getElementById('start-btn');
-timedModeSwitch.addEventListener('click', timedReport);
 
 // plays audio for both modes
 function playAudio(){
@@ -57,6 +30,34 @@ instantReportBtn.addEventListener('click', playAudio);
 // timer stuff
 let countdown; //wes said something about how if you dont want this in the glboal name space aroudn the 5 min mark but i didnt catch it
 const countdownDisplay = document.getElementById('countdown-display');
+
+function timedReport () {
+    const timerInput = document.getElementById('timer-input');
+    const resetBtn = document.getElementById('stop-btn');
+    resetBtn.addEventListener('click', resetTime);
+    // countdownDisplay.textContent = '00:00';
+    
+    
+    timerInput.addEventListener('submit', function(e){
+    e.preventDefault();
+    const mins = this.minutes.value;
+    const secs = this.seconds.value;
+    console.log(mins);
+    console.log(secs);
+    timer(parseInt((mins * 60)) + parseInt(secs));
+    this.reset();
+    });
+    
+   
+};
+
+function resetTime(){
+    clearInterval(countdown);
+    countdownDisplay.textContent = '00:00';
+}
+
+let timedModeSwitch = document.getElementById('start-btn');
+timedModeSwitch.addEventListener('click', timedReport);
 
 
 function timer(seconds){
