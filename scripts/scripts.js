@@ -29,9 +29,10 @@ instantReportBtn.addEventListener('click', playAudio);
 
 // timer stuff
 let countdown; //wes said something about how if you dont want this in the glboal name space aroudn the 5 min mark but i didnt catch it
+
 const countdownDisplay = document.getElementById('countdown-display');
 
-function timedReport () {
+// function timedReport () {
     const timerInput = document.getElementById('timer-input');
     const resetBtn = document.getElementById('stop-btn');
     resetBtn.addEventListener('click', resetTime);
@@ -49,15 +50,16 @@ function timedReport () {
     });
     
    
-};
+// };
 
 function resetTime(){
     clearInterval(countdown);
     countdownDisplay.textContent = '00:00';
-}
+    document.getElementById('timer-input').reset();
+};
 
-let timedModeSwitch = document.getElementById('start-btn');
-timedModeSwitch.addEventListener('click', timedReport);
+// let timedModeSwitch = document.getElementById('start-btn');
+// timedModeSwitch.addEventListener('click', timedReport);
 
 
 function timer(seconds){
