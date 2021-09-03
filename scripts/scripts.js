@@ -17,7 +17,7 @@
 
 
 // plays audio for both modes
-function playAudio(){
+function playAudio() {
     let audio = new Audio('audio/wereportedthenews.mp3');
     audio.play();
 };
@@ -33,13 +33,13 @@ let countdown; //wes said something about how if you dont want this in the glboa
 const countdownDisplay = document.getElementById('countdown-display');
 
 // function timedReport () {
-    const timerInput = document.getElementById('timer-input');
-    const resetBtn = document.getElementById('stop-btn');
-    resetBtn.addEventListener('click', resetTime);
-    // countdownDisplay.textContent = '00:00';
-    
-    
-    timerInput.addEventListener('submit', function(e){
+const timerInput = document.getElementById('timer-input');
+const resetBtn = document.getElementById('stop-btn');
+resetBtn.addEventListener('click', resetTime);
+// countdownDisplay.textContent = '00:00';
+
+
+timerInput.addEventListener('submit', function (e) {
     e.preventDefault();
     const mins = this.minutes.value;
     const secs = this.seconds.value;
@@ -47,12 +47,12 @@ const countdownDisplay = document.getElementById('countdown-display');
     console.log(secs);
     timer(parseInt((mins * 60)) + parseInt(secs));
     this.reset();
-    });
-    
-   
+});
+
+
 // };
 
-function resetTime(){
+function resetTime() {
     clearInterval(countdown);
     countdownDisplay.textContent = '00:00';
     document.getElementById('timer-input').reset();
@@ -62,7 +62,7 @@ function resetTime(){
 // timedModeSwitch.addEventListener('click', timedReport);
 
 
-function timer(seconds){
+function timer(seconds) {
     // clear active timer
     clearInterval(countdown);
     //gets current date
@@ -75,10 +75,10 @@ function timer(seconds){
     countdown = setInterval(() => {
         const secondsLeft = Math.round((then - Date.now()) / 1000);
         // check if timer should stop
-        if(secondsLeft < 0){
-          playAudio();  
-          clearInterval(countdown); //clearInterval is a method related to setInterval
-          return;
+        if (secondsLeft < 0) {
+            playAudio();
+            clearInterval(countdown); //clearInterval is a method related to setInterval
+            return;
         }
         //display time left
         displayTimeLeft(secondsLeft);
@@ -86,7 +86,7 @@ function timer(seconds){
 }
 
 function displayTimeLeft(seconds) {
-    const minutes = Math.floor(seconds/60);
+    const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     const display = `${minutes < 10 ? '0' : '' }${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     countdownDisplay.textContent = display;

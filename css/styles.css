@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
 /* Layout */
 
 /* desktop */
@@ -11,73 +17,81 @@
 
 #wrapper {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "h1"
         "instant-content"
         "timed-content"
         "timed-content";
     height: 100vh;
-    width: 100vw; 
+    width: 100vw;
+
 }
 
-h1{
+h1 {
     grid-area: h1;
     justify-self: center;
     font-size: 1.70em;
+    font-weight: 200;
     height: 10vh;
 }
 
 
-#instant-content{
+#instant-content {
     grid-area: instant-content;
     display: grid;
     justify-items: center;
     height: 40vh;
+    font-family: 'Poppins', sans-serif;
 }
 
-#timed-content{
+#timed-content {
     grid-area: timed-content;
     display: grid;
-    grid-template-areas: 
-    "timed-title timed-title"
-    "countdown countdown"
-    "form form"
-    "form form";
+    grid-template-areas:
+        "timed-title timed-title"
+        "countdown countdown"
+        "form form"
+        "form form";
     justify-items: center;
     height: 40vh;
+
 }
 
-#countdown-display{
+#countdown-display {
     grid-area: countdown;
     justify-self: center;
     font-size: 1.70em;
+    font-family: 'Poppins', sans-serif;
 }
 
-#timed-title{
+#timed-title {
     grid-area: timed-title;
+    font-family: 'Poppins', sans-serif;
 }
 
 form {
     grid-area: form;
     display: grid;
-    grid-template-areas: 
-      "mins secs"
-      "start-btn reset-btn";
+    grid-template-areas:
+        "mins secs"
+        "start-btn reset-btn";
 }
 
-#minutes{
+#minutes {
     grid-area: mins;
+    font-family: sans-serif;
 }
 
-#seconds{
+#seconds {
     grid-area: secs;
+    font-family: sans-serif;
 }
 
-#start-btn{
+#start-btn {
     grid-area: start-btn;
 }
 
-#stop-btn{
+#stop-btn {
     grid-area: reset-btn;
 }
 
@@ -85,11 +99,11 @@ form {
 
 /* serif fonts! */
 /* center countdown, can you style input arrows, looks like there needs to be padding between input and buttons */
-button, #start-btn, #stop-btn {
+button,
+#start-btn,
+#stop-btn {
     background-color: black;
     color: white;
     border-radius: 5px;
     /* add rules for pushed animation */
 }
-
-
