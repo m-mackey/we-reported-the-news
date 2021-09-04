@@ -27,16 +27,30 @@ let instantReportBtn = document.getElementById('instant-report-btn');
 instantReportBtn.addEventListener('click', playAudio);
 
 
-// timer stuff
+// +++++++++ TIMER ++++++++++++ //
 let countdown; //wes said something about how if you dont want this in the glboal name space aroudn the 5 min mark but i didnt catch it
 
 const countdownDisplay = document.getElementById('countdown-display');
 
-// function timedReport () {
 const timerInput = document.getElementById('timer-input');
 const resetBtn = document.getElementById('stop-btn');
 resetBtn.addEventListener('click', resetTime);
-// countdownDisplay.textContent = '00:00';
+
+//add leading zeroes to input numbers
+const minInputDisplay = document.getElementById('minutes');
+const secInputDisplay = document.getElementById('seconds');
+
+function addLeadingZero(value) {
+    return  value.length < 2 ? "0" + value : value;
+};
+
+minInputDisplay.addEventListener('input', function() {
+    minInputDisplay.value = addLeadingZero(minInputDisplay.value);
+});
+
+secInputDisplay.addEventListener('input', function () {
+    secInputDisplay.value = addLeadingZero(secInputDisplay.value);
+});
 
 
 timerInput.addEventListener('submit', function (e) {
@@ -50,17 +64,11 @@ timerInput.addEventListener('submit', function (e) {
 });
 
 
-// };
-
 function resetTime() {
     clearInterval(countdown);
     countdownDisplay.textContent = '00:00';
     document.getElementById('timer-input').reset();
 };
-
-// let timedModeSwitch = document.getElementById('start-btn');
-// timedModeSwitch.addEventListener('click', timedReport);
-
 
 function timer(seconds) {
     // clear active timer
