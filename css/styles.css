@@ -17,11 +17,12 @@
 
 #wrapper {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-        "h1"
-        "instant-content"
-        "timed-content"
-        "timed-content";
+        "h1 h1"
+        "instant-content instant-content"
+        "timed-content timed-content"
+        "timed-content timed-content";
     height: 100vh;
     width: 100vw;
 
@@ -47,6 +48,7 @@ h1 {
 #timed-content {
     grid-area: timed-content;
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
         "timed-title timed-title"
         "countdown countdown"
@@ -72,19 +74,21 @@ h1 {
 form {
     grid-area: form;
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
         "mins secs"
         "start-btn reset-btn";
+    width: 98%;
 }
 
 #minutes {
     grid-area: mins;
-    font-family: sans-serif;
+    overflow: auto;
 }
 
 #seconds {
     grid-area: secs;
-    font-family: sans-serif;
+    overflow: auto;
 }
 
 #start-btn {

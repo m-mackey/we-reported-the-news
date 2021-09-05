@@ -37,6 +37,7 @@ const resetBtn = document.getElementById('stop-btn');
 resetBtn.addEventListener('click', resetTime);
 
 //add leading zeroes to input numbers
+//from https://stackoverflow.com/questions/36359553/display-leading-zeros-on-input-number-fields
 const minInputDisplay = document.getElementById('minutes');
 const secInputDisplay = document.getElementById('seconds');
 
