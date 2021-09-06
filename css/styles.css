@@ -74,11 +74,16 @@ h1 {
 form {
     grid-area: form;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-        "mins secs"
-        "start-btn reset-btn";
+        "hours mins secs"
+        "start-btn . reset-btn";
     width: 98%;
+}
+
+#hours {
+    grid-area: hours;
+    overflow: auto;
 }
 
 #minutes {

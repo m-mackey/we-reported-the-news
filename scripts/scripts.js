@@ -38,12 +38,17 @@ resetBtn.addEventListener('click', resetTime);
 
 //add leading zeroes to input numbers
 //from https://stackoverflow.com/questions/36359553/display-leading-zeros-on-input-number-fields
+const hourInputDisplay = document.getElementById('hours')
 const minInputDisplay = document.getElementById('minutes');
 const secInputDisplay = document.getElementById('seconds');
 
 function addLeadingZero(value) {
     return  value.length < 2 ? "0" + value : value;
 };
+
+hourInputDisplay.addEventListener('input', function() {
+    hourInputDisplay.value = addLeadingZero(hourInputDisplay.value);
+});
 
 minInputDisplay.addEventListener('input', function() {
     minInputDisplay.value = addLeadingZero(minInputDisplay.value);
@@ -56,26 +61,29 @@ secInputDisplay.addEventListener('input', function () {
 
 timerInput.addEventListener('submit', function (e) {
     e.preventDefault();
+    const hours = this.hours.value;
     const mins = this.minutes.value;
     const secs = this.seconds.value;
+    console.log(hours);
     console.log(mins);
     console.log(secs);
-    timer(parseInt((mins * 60)) + parseInt(secs));
+    timer(parseInt((hours * 3600)) + parseInt((mins * 60)) + parseInt(secs));
     this.reset();
 });
 
 
 function resetTime() {
     clearInterval(countdown);
-    countdownDisplay.textContent = '00:00';
+    countdownDisplay.textContent = '00:00:00';
     document.getElementById('timer-input').reset();
 };
 
 function timer(seconds) {
+    
     // clear active timer
     clearInterval(countdown);
     //gets current date
-    const now = Date.now();
+    const now = Date.now();  
     //you have to times by 1000 because of how the seconds are by default. is the seconds here special or is it just what is passed because it isn't defined?
     const then = now + seconds * 1000;
     displayTimeLeft(seconds); //runs fn once immediately
@@ -95,8 +103,15 @@ function timer(seconds) {
 }
 
 function displayTimeLeft(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    const display = `${minutes < 10 ? '0' : '' }${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    let remainingSeconds = seconds;
+
+    const remainingHours = Math.floor(remainingSeconds / 3600);
+    remainingSeconds = remainingSeconds % 3600;
+
+    const remainingMinutes = Math.floor(remainingSeconds / 60);
+    
+    remainingSeconds = remainingSeconds % 60;
+
+    const display = `${remainingHours < 10 ? '0' : '' }${remainingHours}:${remainingMinutes < 10 ? '0' : '' }${remainingMinutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     countdownDisplay.textContent = display;
 }
