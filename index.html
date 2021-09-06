@@ -26,11 +26,12 @@
 
         <section id="timed-content">
             <h2 id="timed-title">NEWS ON TIME</h2>
-            <div id="countdown-display">00:00</div>
+            <div id="countdown-display">00:00:00</div>
 
             <form id="timer-input">
-                <input type="number" id="minutes" min="0" max="60" value="00">
-                <input type="number" id="seconds" min="0" max="60" value="00">
+                <input type="number" id="hours" min="0" value="00">
+                <input type="number" id="minutes" min="0" max="59" value="00">
+                <input type="number" id="seconds" min="0" max="59" value="00">
                 <input type="submit" value="START" id="start-btn">
                 <input type="button" value="RESET" id="stop-btn">
             </form>
