@@ -146,16 +146,16 @@ button,
     /* add rules for pushed animation */
 }
 
-button:hover,
-#start-btn:hover,
-#stop-btn:hover {
+button:active,
+#start-btn:active,
+#stop-btn:active {
     background-color: #60ead1;
     color: black;
 }
 
-button:active,
-#start-btn:active,
-#stop-btn:active {
+button:hover,
+#start-btn:hover,
+#stop-btn:hover {
     background-color: #60ead1;
     color: black;
 }
