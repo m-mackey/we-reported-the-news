@@ -153,6 +153,13 @@ button:hover,
     color: black;
 }
 
+button:active,
+#start-btn:active,
+#stop-btn:active {
+    background-color: #60ead1;
+    color: black;
+}
+
 input[type = number] {
     border: 1px solid black;
     border-radius: 5px;
