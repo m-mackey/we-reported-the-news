@@ -4,6 +4,12 @@
     font-weight: 200;
 }
 
+@media (min-width: 35rem){
+    *{
+        font-size: x-large;
+    }
+}
+
 *:before,
 *:after {
   box-sizing: inherit;
@@ -31,6 +37,12 @@
         "timed-content timed-content"; */
     height: 88vh;
     width: 100vw;
+}
+
+@media (max-width: 23rem){
+    #wrapper{
+        padding-top: 1rem;
+    }
 }
 
 @media (min-width: 50rem){
@@ -61,6 +73,14 @@ h1 {
     /* padding: 0.5em 0.5em 3em 0.5em; */
 }
 
+@media (min-width: 50rem){
+    #instant-content{
+        height: 50vh;
+        width: 45%;
+        margin-top: 4rem;
+    }
+}
+
 #timed-content {
     grid-area: timed-content;
     display: grid;
@@ -73,6 +93,15 @@ h1 {
     justify-items: center;
     height: 50vh;
     margin: auto;
+}
+
+@media (min-width: 50rem){
+    #timed-content{
+        height: 50vh;
+        width: 50%;
+        margin: 0;
+        margin-top: 3rem;
+    }
 }
 
 #countdown-display {
@@ -130,7 +159,9 @@ button,
 #stop-btn {
     background-color: black;
     color: white;
+    border: 1px solid black;
     border-radius: 5px;
+    font-size: x-large;
     /* add rules for pushed animation */
 }
 
