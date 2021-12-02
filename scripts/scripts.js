@@ -10,7 +10,7 @@ instantReportBtn.addEventListener('click', playAudio);
 
 
 // +++++++++ TIMER ++++++++++++ //
-let countdown; //wes said something about how if you dont want this in the glboal name space aroudn the 5 min mark but i didnt catch it
+let countdown; //wes said something about how if you dont want this in the global name space around the 5 min mark but i didn't catch it
 
 const countdownDisplay = document.getElementById('countdown-display');
 
@@ -40,15 +40,15 @@ secInputDisplay.addEventListener('input', function () {
     secInputDisplay.value = addLeadingZero(secInputDisplay.value);
 });
 
-
+//TIMER FUNCTIONALITY
 timerInput.addEventListener('submit', function (e) {
     e.preventDefault();
     const hours = this.hours.value;
     const mins = this.minutes.value;
     const secs = this.seconds.value;
-    console.log(hours);
-    console.log(mins);
-    console.log(secs);
+    // console.log(hours);
+    // console.log(mins);
+    // console.log(secs);
     timer(parseInt((hours * 3600)) + parseInt((mins * 60)) + parseInt(secs));
     this.reset();
 });
