@@ -1,6 +1,6 @@
 // plays audio for both modes
 function playAudio() {
-    let audio = new Audio('audio/wereportedthenews.mp3');
+    let audio = new Audio('audio/wereportedthenews.wav');
     audio.play();
 };
 
